@@ -1,0 +1,15 @@
+{
+  "name": "student-notes-sharing-system",
+  "version": "1.0.0",
+  "description": "A simple student notes sharing desktop application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "allowScripts": {
+    "electron@39.0.0": true
+  },
+  "devDependencies": {
+    "electron": "^39.0.0"
+  }
+}

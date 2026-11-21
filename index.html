@@ -1,53 +1,126 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Student Note Sharing System</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Notes Sharing System</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
     <div class="container">
+        <aside class="sidebar">
+            <h2>📚 Student Notes</h2>
+            <p class="menu-title">MAIN MENU</p>
 
-        <h1>Student Note Sharing System</h1>
-        <p class="subtitle">Share Your Notes With Other Students</p>
+            <button class="menu-btn active" id="dashboardBtn">
+                🏠 Dashboard
+            </button>
 
-        <div class="note-form">
-            <h2>Add New Note</h2>
+            <button class="menu-btn" id="addBtn">
+                ➕ Add Notes
+            </button>
 
-            <input type="text" id="studentName"
-                placeholder="Enter your name">
+            <button class="menu-btn" id="viewBtn">
+                📖 View Notes
+            </button>
 
-            <input type="text" id="noteTitle"
-                placeholder="Enter note title">
+            <div class="sidebar-bottom">
+                Software Development Project
+            </div>
+        </aside>
 
-            <select id="subject">
-                <option value="">Select Subject</option>
-                <option value="Programming">Programming</option>
-                <option value="Database">Database</option>
-                <option value="Mathematics">Mathematics</option>
-                <option value="Software Engineering">Software Engineering</option>
-                <option value="Other">Other</option>
-            </select>
+        <main class="main-content">
+            <header>
+                <div>
+                    <h1>Student Notes Sharing System</h1>
+                    <p>Manage your study notes easily.</p>
+                </div>
+                <span class="app-label">Desktop App</span>
+            </header>
 
-            <textarea id="noteDetails"
-                placeholder="Write your note here..."></textarea>
+            <section id="dashboardSection">
+                <div class="welcome">
+                    <h2>Welcome, Student! 👋</h2>
+                    <p>Keep all your study notes in one place.</p>
+                </div>
 
-            <button id="addButton">Share Note</button>
-        </div>
+                <div class="stats">
+                    <div class="stat-card">
+                        <p>Total Notes</p>
+                        <h2 id="totalNotes">0</h2>
+                    </div>
 
-        <div class="notes-section">
-            <h2>Shared Notes</h2>
+                    <div class="stat-card">
+                        <p>Total Subjects</p>
+                        <h2 id="totalSubjects">0</h2>
+                    </div>
+                </div>
 
-            <input type="text" id="searchBox"
-                placeholder="Search notes by title...">
+                <div class="recent-box">
+                    <h2>Recent Notes</h2>
+                    <div id="recentNotes"></div>
+                </div>
+            </section>
 
-            <div id="notesList"></div>
-        </div>
+            <section id="addSection" class="hidden">
+                <div class="form-box">
+                    <h2>Add New Notes</h2>
+                    <p>Enter your study note details below.</p>
 
+                    <form id="notesForm">
+                        <label for="noteTitle">Note Title</label>
+                        <input id="noteTitle" type="text"
+                               placeholder="Enter note title" required>
+
+                        <label for="subject">Subject</label>
+                        <input id="subject" type="text"
+                               placeholder="Example: Data Structures" required>
+
+                        <label for="semester">Semester</label>
+                        <select id="semester" required>
+                            <option value="">Select Semester</option>
+                            <option>1st Semester</option>
+                            <option>2nd Semester</option>
+                            <option>3rd Semester</option>
+                            <option>4th Semester</option>
+                            <option>5th Semester</option>
+                            <option>6th Semester</option>
+                            <option>7th Semester</option>
+                            <option>8th Semester</option>
+                        </select>
+
+                        <label for="description">Note Description</label>
+                        <textarea id="description"
+                                  placeholder="Write your notes here..."
+                                  rows="5" required></textarea>
+
+                        <button class="primary-btn" type="submit">
+                            Save Notes
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <section id="viewSection" class="hidden">
+                <div class="recent-box">
+                    <h2>All Study Notes</h2>
+
+                    <input type="text" id="searchInput"
+                           placeholder="Search by title or subject...">
+
+                    <div id="allNotes"></div>
+                </div>
+            </section>
+
+            <footer>
+                Student Notes Sharing System | Software Development Lab
+            </footer>
+        </main>
     </div>
 
     <script src="renderer.js"></script>
-
 </body>
 </html>
+
