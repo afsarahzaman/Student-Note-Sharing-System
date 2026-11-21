@@ -1,0 +1,9 @@
+directories:
+  output: dist
+  buildResources: build
+appId: com.student.notes
+productName: Student Notes Sharing System
+win:
+  target: nsis
+files: []
+electronVersion: 39.0.0
